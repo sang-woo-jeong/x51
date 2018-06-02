@@ -14,11 +14,7 @@
 			a {text-decoration:none; color:black;}
 			body {overflow-x:hidden;}
 			body::-webkit-scrollbar {display: none;}
-			.hid {overflow:hidden; padding-right:10px;}
-			.hid:nth-child(2) {height:80px;}
-			.ehid:nth-child(2) {height:110px; margin-bottom:15px;}
-			.t {position:relative; top:200px;}
-			
+						
 			.title {font-weight:bold; font-size:4.5vw;}
 			.subtitle {font-size:2.5vw;}
 			.ttitle{font-size:44px;}
@@ -73,11 +69,9 @@
 				   background-size:cover;}
 			 
 			.sec1 .solid {width:100%; height:100vh; 
-						  position:absolute; top:0; left:-100%; 
+						  position:absolute; top:0; left:0%; 
 						  opacity:.4; background:#851d1a;}
-			.sec1 .solid2 {width:50%; height:100vh; 
-						  position:absolute; top:0; left:-50%; 
-						  background:#851d1a;}			  
+					  
 			.sec1 .textwrap {position:absolute; top:50%; left:25%; text-align:right; color:white;
 							 transform:translateX(-50%) translateY(-50%);}
 							 			
@@ -92,11 +86,9 @@
 				   background-size:cover;}
 			 
 			.sec2 .solid {width:100%; height:100vh; 
-						  position:absolute; top:0; right:-100%; 
+						  position:absolute; top:0; right:0%; 
 						  opacity:.4; background:#4f3f31;}
-			.sec2 .solid2 {width:50%; height:100vh; 
-						  position:absolute; top:0; right:-50%; 
-						  background:#4f3f31;}			  
+					  
 			.sec2 .textwrap {position:absolute; top:50%; left:75%; color:white;
 							 transform:translateX(-50%) translateY(-50%);}
 			
@@ -112,11 +104,9 @@
 				   background-size:cover;}
 			 
 			.sec3 .solid {width:100%; height:100vh; 
-						  position:absolute; top:0; left:-100%;
+						  position:absolute; top:0; left:0%;
 						  opacity:.4; background:#739c26;}
-			.sec3 .solid2 {width:50%; height:100vh; 
-						  position:absolute; top:0; left:-50%;
-						  background:#739c26;}			  
+					  
 			.sec3 .textwrap {position:absolute; top:50%; left:25%; color:white; text-align:right;
 							 transform:translateX(-50%) translateY(-50%);}
 					
@@ -158,7 +148,7 @@
 				.title {font-size:12vw;}
 				.ttitle {visibility:hidden;}
 				.subtitle {font-size:6vw;}
-				.bodytext {font-size:16px; max-width:400px;  text-decoration:underline;}
+				.bodytext {font-size:3vw; width:600px;  text-decoration:underline; line-height:48px;}
 				.more {visibility:hidden;}
 				.lnb {visibility:hidden; display:none;}
 				
@@ -174,18 +164,19 @@
 				
 				.sec1 .textwrap {width:90%; text-align:left; 
 								 left:50%; top:50%; transform:translateX(-50%);}
-				.sec1 .textwrap .title {font-size:64px;}				 
-				.sec1 .textwrap .subtitle {font-size:32px;}				 
+				.sec1 .textwrap .title {font-size:12vw;}				 
+				.sec1 .textwrap .subtitle {font-size:8vw;}				 
 				.sec1 .subtextwrap {width:90%; text-align:left; 
-								 left:50%; top:62%; transform:translateX(-50%);}							 
-
+								 left:50%; top:70%; transform:translateX(-50%);}							 
+				
+				
 				.sec2 .textwrap {width:90%; text-align:left; 
 								 left:50%; top:32%; transform:translateX(-50%);}
-				.sec2 .textwrap .title {font-size:64px;}				 
-				.sec2 .textwrap .subtitle {font-size:32px;}				 
+				.sec2 .textwrap .title {font-size:12vw;}				 
+				.sec2 .textwrap .subtitle {font-size:6vw;}				 
 				.sec2 .subtextwrap {width:90%; text-align:left; 
 								 left:50%; top:62%; transform:translateX(-50%);}
-								 
+				.sec2 .bodytext {font-size:3vw; width:600px;  text-decoration:underline;}				 
 				.sec3 {background-position:80%;}
 				.sec3 .textwrap {width:90%; text-align:left; 
 								 left:50%; top:50%; transform:translateX(-50%);}
@@ -208,220 +199,23 @@
 		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
 		<script type="text/javascript" src="https://raw.github.com/LeaVerou/prefixfree/gh-pages/prefixfree.min.js"></script>
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/stellar.js/0.6.2/jquery.stellar.min.js"></script>
-		
 		<script>
-			<!--
-				$(document).ready(function(){
-					$(window).stellar({horizontalScrolling:false, hideDistantElements: false});
-					$(window).stellar({scrollProperty: 'transform'});
-					var mw = $(window).width();
-					
-					if(mw<1023){
-						window.location = "mobile.html";
-					}
-					var i = 0;
-					
-
-							
-					$(".fa-bars").click(function(){			
-						i++;
-						if(i%2==1){
-							$(".menusolid").stop().animate({"height":45+"vw"},300);
-						} else{
-							$(".menusolid").stop().animate({"height":0+"vw"},300);
-						}
-					});
-					$("section").click(function(){
-						i++;
+			$(document).ready(function(){
+				var i = 0;
+				$(".fa-bars").click(function(){			
+					i++;
+					if(i%2==1){
+						$(".menusolid").stop().animate({"height":45+"vw"},300);
+					} else{
 						$(".menusolid").stop().animate({"height":0+"vw"},300);
-					});
-					
-					var mh = $(window).height();					
-					var e = 0;
-					
-					$(".sec0 .textwrap .title").animate({top:0},800);
-					$(".sec0 .textwrap .subtitle").delay(50).animate({top:0},800);
-															
-					$(".fa-pause").click(function(){
-						$(this).css({"visibility":"hidden"});
-						$(".fa-play").css({"visibility":"visible"});
-					});
-					
-					$(".fa-play").click(function(){
-						$(this).css({"visibility":"hidden"});
-						$(".fa-pause").css({"visibility":"visible"});
-					});
-					
-					
-					$("html").on("mousewheel",function(event,delta){
-						event.preventDefault();												
-						if(delta>0){
-							e--;
-							if(e<0){
-								e=0;
-							};
-						}else {
-							e++;
-							if(e>4){
-								e=4;
-							};
-						};						
-						$(this).stop().animate({scrollTop:mh*e},500);																			
-					});
-					
-					$("html").on("swipeleft",function(){
-						e++;
-						$(this).stop().animate({scrollTop:mh*e},500);
-						if(e>4){
-							e=4;
-						};
-					 }); 
-					
-					$("html").on("swiperight",function(){
-						e--;
-						$(this).stop().animate({scrollTop:mh*e},500);
-						if(e<0){
-							e=0;
-						};
-					 }); 
-					
-					$(window).scroll(function(){
-						var sl =  Math.ceil($(window).scrollTop());
-						
-						$(".lnb li").eq(4).on("click",function(){
-							$("html").stop().animate({scrollTop:0});
-							e=0;
-						});
-						
-						$(".lnb li").eq(3).on("click",function(){
-							$("html").stop().animate({scrollTop:mh});
-							e=1;
-						});
-						
-						$(".lnb li").eq(2).on("click",function(){
-							$("html").stop().animate({scrollTop:mh*2});
-							e=2;
-						});
-						
-						$(".lnb li").eq(1).on("click",function(){
-							$("html").stop().animate({scrollTop:mh*3});
-							e=3;
-						});
-						
-						$(".lnb li").eq(0).on("click",function(){
-							$("html").stop().animate({scrollTop:mh*4});
-							e=4;
-						});
-						
-						if(sl==0){
-							$(".lnb li").animate({"width":20});
-							$(".lnb li").eq(4).animate({"width":75});
-							$(".sec0 .textwrap .title").stop().animate({top:0});
-							$(".sec0 .textwrap .subtitle").stop().delay(50).animate({top:0});
-							
-						}
-						
-						else {
-							
-							$(".sec0 .textwrap .title").stop().animate({top:200});
-							$(".sec0 .textwrap .subtitle").stop().animate({top:200});	
-							
-						};
-						
-						if(sl==mh){
-							$(".lnb li").animate({"width":20});
-							$(".lnb li").eq(3).animate({"width":75});
-							$(".sec1 .title").stop().animate({top:0});
-							$(".sec1 .subtitle").stop().delay(50).animate({top:0});
-							$(".sec1 .ttitle").stop().delay(100).animate({top:0});
-							$(".sec1 .bodytext").stop().delay(150).animate({top:0});
-							$(".sec1 .solid").stop().animate({left:0});
-							$(".sec1 .solid2").stop().animate({left:0});
-							$(".sec1 .more").stop().delay(500).animate({opacity:1});
-						}
-						
-						else {
-							$(".sec1 .title,.sec1 .subtitle,.sec1 .ttitle,.sec1 .bodytext").stop().animate({top:100});
-							$(".sec1 .solid").stop().animate({left:-100+"%"},100);
-							$(".sec1 .solid2").stop().animate({left:-100+"%"},100);
-							$(".sec1 .more").stop().animate({opacity:0});
-							
-						};
-						
-						if(sl==mh*2){
-							$(".lnb li").animate({"width":20});
-							$(".lnb li").eq(2).animate({"width":75});
-							$(".sec2 .title").stop().animate({top:0});
-							$(".sec2 .subtitle").stop().delay(50).animate({top:0});
-							$(".sec2 .ttitle").stop().delay(100).animate({top:0});
-							$(".sec2 .bodytext").stop().delay(150).animate({top:0});
-							$(".sec2 .solid").stop().animate({right:0});
-							$(".sec2 .solid2").stop().animate({right:0});
-							$(".sec2 .more").stop().delay(500).animate({opacity:1});
-						}
-						
-						else {
-							$(".sec2 .title,.sec2 .subtitle,.sec2 .ttitle,.sec2 .bodytext").stop().animate({top:100});
-							$(".sec2 .solid").stop().animate({right:-100+"%"},100);
-							$(".sec2 .solid2").stop().animate({right:-100+"%"},100);
-							$(".sec2 .more").stop().animate({opacity:0});
-							
-						};
-						
-						if(sl==mh*3){
-							$(".lnb li").animate({"width":20});
-							$(".lnb li").eq(1).animate({"width":75});
-							$(".sec3 .title").stop().animate({top:0});
-							$(".sec3 .subtitle").stop().delay(50).animate({top:0});
-							$(".sec3 .ttitle").stop().delay(100).animate({top:0});
-							$(".sec3 .bodytext").stop().delay(150).animate({top:0});
-							$(".sec3 .solid").stop().animate({left:0});
-							$(".sec3 .solid2").stop().animate({left:0});
-							$(".sec3 .more").stop().delay(500).animate({opacity:1});
-						}
-						
-						else {
-							$(".sec3 .title,.sec3 .subtitle,.sec3 .ttitle,.sec3 .bodytext").stop().animate({top:100});
-							$(".sec3 .solid").stop().animate({left:-100+"%"},100);
-							$(".sec3 .solid2").stop().animate({left:-100+"%"},100);
-							$(".sec3 .more").stop().animate({opacity:0});
-							
-						};
-						
-						if(sl==mh*4){
-							$(".lnb li").animate({"width":20});
-							$(".lnb li").eq(0).animate({"width":75});
-							$(".sec4 .iwrap .t").eq(0).delay(0).animate({top:0},500);
-							$(".sec4 .iwrap .t").eq(1).delay(100).animate({top:0},500);
-							$(".sec4 .iwrap .t").eq(2).delay(150).animate({top:0},500);
-							$(".sec4 .iwrap .t").eq(3).delay(250).animate({top:0},500);
-							
-							$(".sec4 i").eq(0).delay(0).stop().animate({"opacity":1});
-							$(".sec4 i").eq(1).delay(150).stop().animate({"opacity":1});
-							$(".sec4 i").eq(2).delay(250).stop().animate({"opacity":1});
-							
-							$(".sec4 .solid").eq(0).delay(0).stop().animate({top:0},500);
-							$(".sec4 .solid").eq(1).delay(50).stop().animate({top:0},500);
-							$(".sec4 .solid").eq(2).delay(100).stop().animate({top:0},500);
-							
-							$(".sec4 .solid2").eq(0).delay(100).stop().animate({bottom:0},500);
-							$(".sec4 .solid2").eq(1).delay(150).stop().animate({bottom:0},500);
-							$(".sec4 .solid2").eq(2).delay(200).stop().animate({bottom:0},500);
-							
-						}
-						
-						else{
-							$(".sec4 .solid").stop().animate({top:100+"%"},500);
-							$(".sec4 .solid2").stop().animate({bottom:-100+"%"},500);
-							$(".sec4 .iwrap .t").stop().animate({top:100});
-							$(".sec4 i").stop().animate({"opacity":0});
-						};
-						
-																		
-					});
+					}
 				});
-			//-->
+				$("section").click(function(){
+					i++;
+					$(".menusolid").stop().animate({"height":0+"vw"},300);
+				});
+			});
+			
 		</script>
 	</head>
 	<body>
