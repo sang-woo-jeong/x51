@@ -40,7 +40,7 @@
 			
 			
 				 
-			.sec0 .gnb {height:60px;  position:relative; 
+			.sec0 .gnb {height:60px;  position:relative; min-width:1080px;
 				  box-shadow:5px 0px 5px 3px #353535; background:white; z-index:99;}
 			.sec0 .gnb .snsWrap {position:absolute; top:15px; left:28px;}
 			.sec0 .gnb i {font-size:28px; margin-left:12px;}
@@ -56,7 +56,7 @@
 						opacity:.2; z-index:1; width:20vw;}
 			.sec0 .filter {width:100%; height:100vh; background:url('./images/g1.png') no-repeat 50% 50%;
 							background-size:cover; opacity:.8; z-index:50;}
-			.sec0 .contain video {width:100%; position:absolute; top:0; left:50%; z-index:0; transform:translateX(-50%);}
+			.sec0 .contain video {height:100vh; position:absolute; top:0; left:50%; z-index:0; transform:translateX(-50%);}
 			.sec0 .contain .textwrap {text-align:center; color:#353535;
 									   position:absolute; top:50%; left:50%; 
 									   transform:translateX(-50%) translateY(-50%); z-index:2;}
@@ -68,7 +68,7 @@
 			.sec0 .contain .textwrap i.fa-pause {visibility:visible;}
 			
 			section a {color:white;}
-			.sec1 {width:100%; height:100vh; position:relative;
+			.sec1 {width:100%; height:100vh; position:relative; min-width:1080px;
 				   background:url('./images/b1.png') no-repeat 50% 50%;
 				   background-size:cover;}
 			 
@@ -87,7 +87,7 @@
 			
 			
 			.sec1 .more {background:#f6d50c;}
-			.sec2 {width:100%; height:100vh; position:relative;
+			.sec2 {width:100%; height:100vh; position:relative; min-width:1080px;
 				   background:url('./images/b2.png') no-repeat 50% 50%;
 				   background-size:cover;}
 			 
@@ -107,7 +107,7 @@
 			.sec2 .subtitle {margin-top:-10px;}
 			.sec2 .bodytext {width:400px; font-size:16px;}
 			.sec2 .more {background:#654b34;}
-			.sec3 {width:100%; height:100vh; position:relative;
+			.sec3 {width:100%; height:100vh; position:relative; min-width:1080px;
 				   background:url('./images/b4.png') no-repeat 50% 50%;
 				   background-size:cover;}
 			 
@@ -125,7 +125,7 @@
 			
 			.sec3 .more {background:#e96e69;}
 			
-			.sec4 {width:100%; height:100vh; position:relative;}
+			.sec4 {width:100%; height:100vh; position:relative; min-width:1080px;}
 			.sec4 .iwrap {width:33.333%; height:100vh; position:relative; float:left;}
 			.sec4 .iwrap:nth-child(1) {background:url('./images/b1.png') no-repeat 50% 50%; 
 									   background-size:cover;}
@@ -414,7 +414,7 @@
 			<a href='2.html'><li>Speakeasies' Swing Band!</li></a>
 			<a href='3.html'><li>Room Eleven</li></a>
 		</ul>
-		<header class='sec0'>
+		<header class='sec0' data-stellar-background-ratio='0.5'>
 			<div class='gnbwrap'>
 				<nav class='gnb'>
 					<div class='snsWrap'>
@@ -455,7 +455,7 @@
 				</div>
 			</div>
 		</header>
-		<section class='sec1'>
+		<section class='sec1' data-stellar-background-ratio='0.5'>
 			<div class='solid'></div>
 			<div class='solid2'></div>
 			
@@ -472,7 +472,7 @@
 				</p></a></div>
 			</div>
 		</section>
-		<section class='sec2'>
+		<section class='sec2' data-stellar-background-ratio='0.5'>
 			<div class='solid'></div>
 			<div class='solid2'></div>
 			<div class='textwrap'>
@@ -489,7 +489,7 @@
 				</p></a></div>
 			</div>
 		</section>
-		<section class='sec3'>
+		<section class='sec3' data-stellar-background-ratio='0.5'>
 			<div class='solid'></div>
 			<div class='solid2'></div>
 			<div class='textwrap'>
