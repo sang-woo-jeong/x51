@@ -262,7 +262,10 @@
 						};						
 						$(this).stop().animate({scrollTop:mh*e},500);																			
 					});
-					
+					$.event.special.swipe.scrollSupressionThreshold = 10; 
+					$.event.special.swipe.horizontalDistanceThreshold = 30; 
+					$.event.special.swipe.durationThreshold = 500;  
+					$.event.special.swipe.verticalDistanceThreshold = 75;
 					$("html").on("swipeleft",function(){
 						e++;
 						$(this).stop().animate({scrollTop:mh*e},500);
